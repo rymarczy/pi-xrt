@@ -31,3 +31,15 @@ docker-compose up -d
 ```
 
 `-d` flag launches container in background
+
+## Issues
+
+I've run into a few issues on host system reboots. The host computer must start `pulseaudio` automatically, or the container will not be able to pass audio through.
+
+On debian, it also seems like there could be a bit of race condtion between the `docker` daemon starting and `pulseaudio`.
+
+Adding the following to your `docker` `systemd` configuration seems to fix this:
+```
+ConditionPathExists=/run/user/1000/pulse/native
+```
+the `1000` above being your `UID` in the `.env` file.
