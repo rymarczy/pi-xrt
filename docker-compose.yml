@@ -10,9 +10,9 @@ services:
       - "PULSE_SERVER=unix:/tmp/pulseaudio.socket"
     volumes:
       - type: bind
-        source: "/usr/share/alsa"
-        target: "/usr/share/alsa"
+        source: /usr/share/alsa
+        target: /usr/share/alsa
       - type: bind
-        source: "/run/user/${UID}/pulse/native"
-        target: "/tmp/pulseaudio.socket"
+        source: /run/user/${UID}/pulse/native
+        target: /tmp/pulseaudio.socket
     restart: unless-stopped
