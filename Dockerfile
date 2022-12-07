@@ -1,11 +1,10 @@
-FROM debian:11
+FROM debian:11-slim
 
 RUN apt-get update \
  && apt-get install --yes \
  --no-install-recommends \
  --no-install-suggests \
  python3 \
- pulseaudio \
  ca-certificates \
  mplayer
 
