@@ -5,6 +5,9 @@ RUN apt-get update \
  --no-install-recommends \
  --no-install-suggests \
  python3 \
+ libpulse0 \
+ libasound2-dev \
+ libasound2-plugins \
  ca-certificates \
  mplayer
 
