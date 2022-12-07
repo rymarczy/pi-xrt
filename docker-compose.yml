@@ -10,7 +10,7 @@ services:
       - "PULSE_SERVER=unix:/tmp/pulseaudio.socket"
     volumes:
       - "/usr/share/alsa:/usr/share/alsa"
-      - "/run/user/${UID}/pulse/natve:/tmp/pulseaudio.socket"
+      - "/run/user/${UID}/pulse/native:/tmp/pulseaudio.socket"
       # - type: bind
       #   source: /usr/share/alsa
       #   target: /usr/share/alsa
