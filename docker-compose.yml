@@ -7,8 +7,8 @@ services:
     env_file: .env
     user: "${UID}"
     environment: 
-      - "PULSE_SERVER=unix:/tmp/pulseaudio.socket"
+      - "PULSE_SERVER=unix:/run/user/${UID}/pulse/native"
     volumes:
       - "/usr/share/alsa:/usr/share/alsa"
-      - "/run/user/${UID}/pulse/native:/tmp/pulseaudio.socket"
+      - "/run/user/${UID}/pulse/native:/run/user/${UID}/pulse/native"
     restart: unless-stopped
