@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  radio_player:
+    build: .
+    working_dir: /radio/
+    env_file: .env
+    user: "${UID}"
+    environment: 
+      - "PULSE_SERVER=unix:/tmp/pulseaudio.socket"
+    volumes:
+      - "/usr/share/alsa:/usr/share/alsa"
+      - "/run/user/${UID}/pulse/native:/tmp/pulseaudio.socket"
+    restart: unless-stopped
