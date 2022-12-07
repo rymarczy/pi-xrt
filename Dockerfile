@@ -7,7 +7,6 @@ RUN apt-get update \
  python3 \
  libpulse0 \
  libasound2-dev \
- libasound2-plugins \
  ca-certificates \
  mplayer
 
