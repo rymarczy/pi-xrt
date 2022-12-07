@@ -1,4 +1,4 @@
-version: '3'
+version: '3.2'
 
 services:
   radio_player:
@@ -9,10 +9,12 @@ services:
     environment: 
       - "PULSE_SERVER=unix:/tmp/pulseaudio.socket"
     volumes:
-      - type: bind
-        source: /usr/share/alsa
-        target: /usr/share/alsa
-      - type: bind
-        source: /run/user/${UID}/pulse/native
-        target: /tmp/pulseaudio.socket
+      - "/usr/share/alsa:/usr/share/alsa"
+      - "/run/user/${UID}/pulse/natve:/tmp/pulseaudio.socket"
+      # - type: bind
+      #   source: /usr/share/alsa
+      #   target: /usr/share/alsa
+      # - type: bind
+      #   source: /run/user/${UID}/pulse/native
+      #   target: /tmp/pulseaudio.socket
     restart: unless-stopped
